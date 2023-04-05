@@ -5,7 +5,7 @@ import (
 	"time"
 
 	log "github.com/sirupsen/logrus"
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 )
@@ -39,7 +39,7 @@ func Open(dbConfig DbConfig, config *gorm.Config, models ...interface{}) (err er
 		}
 	}
 
-	if db, err = gorm.Open(mysql.Open(dbConfig.Url), config); err != nil {
+	if db, err = gorm.Open(postgres.Open(dbConfig.Url), config); err != nil {
 		log.Errorf("opens database failed: %s", err.Error())
 		return
 	}
