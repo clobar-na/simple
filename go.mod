@@ -1,4 +1,4 @@
-module github.com/mlogclub/simple
+module github.com/clobar-na/simple
 
 go 1.20
 
